@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 name: Deploy tl-showroom-frontend-poc
+=======
+name: Deploy Application
+>>>>>>> 6bf59f5 (Initial commit)
 
 on:
   push:
@@ -11,6 +15,7 @@ jobs:
 
     steps:
       - name: Checkout código
+<<<<<<< HEAD
         uses: actions/checkout@v4
 
       - name: Desplegar en el servidor
@@ -19,3 +24,21 @@ jobs:
         run: |
           echo "$SSH_PRIVATE_KEY" > private_key && chmod 600 private_key
           ssh -o StrictHostKeyChecking=no -i private_key usuario@tu-servidor "cd /opt/frontend/showroom-frontend && git pull origin main && ./deploy.sh"
+=======
+        uses: actions/checkout@v3
+
+      - name: Configurar SSH
+        run: |
+          echo "$SSH_PRIVATE_KEY" > private_key
+          chmod 600 private_key
+          mkdir -p ~/.ssh
+          mv private_key ~/.ssh/id_rsa
+
+      - name: Deploy en servidor
+        run: |
+          ssh -i ~/.ssh/id_rsa root@tl-showroom.equalitech.xyz << 'EOF'
+          cd /opt/easyengine/sites/tl-showroom.equalitech.xyz/app/backend
+          git pull origin main
+          docker-compose up -d --build
+          EOF
+>>>>>>> 6bf59f5 (Initial commit)
