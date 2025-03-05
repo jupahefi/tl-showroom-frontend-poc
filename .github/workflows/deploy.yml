@@ -18,8 +18,6 @@ jobs:
         run: |
           mkdir -p ~/.ssh
           touch ~/.ssh/known_hosts
-          ssh-keyscan -H tl-showroom.equalitech.xyz >> ~/.ssh/known_hosts
-          ssh-keyscan -H github.com >> ~/.ssh/known_hosts
 
       - name: 🚀 Desplegar en servidor
         run: |
