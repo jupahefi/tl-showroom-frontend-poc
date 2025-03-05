@@ -28,7 +28,6 @@ jobs:
 
       - name: 🚀 Desplegar en servidor
         run: |
-          ssh root@equalitech.xyz
           cd /opt/frontend/showroom-frontend
           git pull origin main
           bash deploy.sh
