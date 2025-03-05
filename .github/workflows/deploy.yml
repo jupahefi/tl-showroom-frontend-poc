@@ -1,4 +1,4 @@
-name: 🚀 Deploy to Server
+name: "🚀 Deploy to Server - FULL DEBUG"
 
 on:
   push:
@@ -11,34 +11,40 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: 📥 Checkout del código
+      - name: "📥 Checkout del código"
         uses: actions/checkout@v3
 
-      - name: 🔍 Configurar SSH con DEBUG
+      - name: "🔍 Configurar SSH con DEBUG"
         run: |
           echo "🛠️ Preparando el entorno SSH..."
           mkdir -p ~/.ssh
+          echo "📁 Carpeta ~/.ssh creada"
       
           echo "🔍 Recuperando clave privada del backend desde Secrets..."
           echo "${{ secrets.SSH_PRIVATE_KEY_BACKEND }}" | base64 --decode | tr -d '\r' > ~/.ssh/id_rsa
+          ls -lah ~/.ssh/id_rsa
+          file ~/.ssh/id_rsa
       
           echo "🔍 Recuperando clave pública del backend desde Secrets..."
           echo "${{ secrets.SSH_PUBLIC_KEY_BACKEND }}" | base64 --decode | tr -d '\r' > ~/.ssh/id_rsa.pub
+          ls -lah ~/.ssh/id_rsa.pub
+          file ~/.ssh/id_rsa.pub
       
           chmod 600 ~/.ssh/id_rsa
           chmod 644 ~/.ssh/id_rsa.pub
-      
-          echo "🔍 DEBUG: Validando contenido de la clave privada..."
-          file ~/.ssh/id_rsa || echo "⚠️ Error verificando formato de la clave privada"
+          echo "🔐 Permisos de claves SSH actualizados"
       
           echo "🔍 DEBUG: Mostrando los primeros caracteres de la clave privada..."
-          head -n 5 ~/.ssh/id_rsa
+          head -n 5 ~/.ssh/id_rsa || echo "⚠️ Error: Clave privada vacía"
       
           echo "🔍 Contenido de id_rsa.pub:"
-          cat ~/.ssh/id_rsa.pub
+          cat ~/.ssh/id_rsa.pub || echo "⚠️ Error: Clave pública vacía"
       
-          ssh-keyscan -H $SERVER_IP >> ~/.ssh/known_hosts
+          echo "🔍 Agregando IP del servidor a known_hosts..."
+          ssh-keyscan -H $SERVER_IP 2>&1 | tee -a ~/.ssh/known_hosts || echo "⚠️ Error en ssh-keyscan"
+          cat ~/.ssh/known_hosts
       
+          echo "🔍 Configurando SSH en ~/.ssh/config..."
           echo "Host $SERVER_IP
                 User $SERVER_USER
                 IdentityFile ~/.ssh/id_rsa
@@ -46,8 +52,8 @@ jobs:
                 PubKeyAcceptedAlgorithms +ssh-rsa
                 HostKeyAlgorithms +ssh-rsa
                 StrictHostKeyChecking no" > ~/.ssh/config
-      
           chmod 600 ~/.ssh/config
+          cat ~/.ssh/config
       
           echo "🔍 Validando clave SSH..."
           ssh-keygen -y -f ~/.ssh/id_rsa || echo "⚠️ Error verificando clave privada"
@@ -59,16 +65,19 @@ jobs:
           echo "🔍 Probando conexión SSH con el servidor..."
           ssh -vT $SERVER_USER@$SERVER_IP || echo "⚠️ Error en conexión SSH"
 
-      - name: 🚀 Desplegar en servidor con DEBUG
+      - name: "🚀 Desplegar en servidor con DEBUG"
         run: |
           echo "🔄 Probando acceso al servidor antes del despliegue..."
-          ssh -o StrictHostKeyChecking=no root@equalitech.xyz "echo '✅ Acceso exitoso'"
-
+          ssh -o StrictHostKeyChecking=no $SERVER_USER@$SERVER_IP "echo '✅ Acceso exitoso'" || echo "⚠️ Error en acceso SSH"
+      
           echo "📂 Cambiando al directorio de despliegue: /opt/frontend/showroom-frontend"
-          ssh root@equalitech.xyz << 'EOF'
-            cd /opt/frontend/showroom-frontend
+          ssh $SERVER_USER@$SERVER_IP << 'EOF'
+            echo "📌 Entrando a /opt/frontend/showroom-frontend"
+            cd /opt/frontend/showroom-frontend || { echo "⚠️ Error: No se pudo cambiar de directorio"; exit 1; }
+      
             echo "🔄 Haciendo pull de la última versión..."
-            git pull origin main
+            git pull origin main || { echo "⚠️ Error en git pull"; exit 1; }
+      
             echo "🚀 Ejecutando script de despliegue..."
-            bash deploy.sh
+            bash deploy.sh || { echo "⚠️ Error ejecutando deploy.sh"; exit 1; }
           EOF
