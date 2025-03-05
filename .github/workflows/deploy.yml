@@ -28,6 +28,8 @@ jobs:
 
       - name: 🚀 Desplegar en servidor
         run: |
-          cd /opt/frontend/showroom-frontend
-          git pull origin main
-          bash deploy.sh
+          ssh root@equalitech.xyz << 'EOF'
+            cd /opt/frontend/showroom-frontend
+            git pull origin main
+            bash deploy.sh
+          EOF
