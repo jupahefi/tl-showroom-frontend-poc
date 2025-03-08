@@ -11,7 +11,7 @@ const backendData = ref<ApiResponse | null>(null);
 
 onMounted(async () => {
     try {
-        const response = await axios.get<ApiResponse>("/api/");
+        const response = await axios.get<ApiResponse>("http://localhost:8000/");
         backendData.value = response.data;
     } catch (error) {
         backendData.value = { error: "No se pudo conectar al backend" };
