@@ -38,30 +38,23 @@ const formattedResponse = computed(() =>
 
 <template>
     <div class="container">
-        <!-- Logos con enlaces -->
-        <div class="logos">
-            <a href="https://vuejs.org/" target="_blank"><img class="neon-border" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg" alt="Vue.js" /></a>
-            <a href="https://vitejs.dev/" target="_blank"><img class="neon-border" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vite/vite-original.svg" alt="Vite" /></a>
-            <a href="https://fastapi.tiangolo.com/" target="_blank"><img class="neon-border" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg" alt="FastAPI" /></a>
-            <a href="https://www.docker.com/" target="_blank"><img class="neon-border" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker" /></a>
-            <a href="https://nginx.org/" target="_blank"><img class="neon-border" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nginx/nginx-original.svg" alt="Nginx" /></a>
-            <a href="https://www.python.org/" target="_blank"><img class="neon-border" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" /></a>
-            <a href="https://www.gnu.org/software/bash/" target="_blank"><img class="neon-border" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg" alt="Bash" /></a>
-            <a href="https://github.com/features/actions" target="_blank">
-                <div class="github-icon">
-                    <img class="neon-border" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub Actions" />
-                </div>
-            </a>
-        </div>
+        <!-- Respuesta de FastAPI -->
+        <pre class="response">{{ formattedResponse }}</pre>
 
         <!-- Contador de recargas -->
         <p class="reload-counter">🔄 Backend recargado: {{ reloadCount }} veces</p>
 
-        <!-- Stack en juego -->
-        <h2>🔥 EasyEngine + Nginx + Docker + Python + SSL + CI/CD con GitHub Actions + Bash</h2>
-
-        <!-- Respuesta de FastAPI -->
-        <pre class="response">{{ formattedResponse }}</pre>
+        <!-- Logos con enlaces y neon glow -->
+        <div class="logos">
+            <a href="https://vuejs.org/" target="_blank"><div class="icon-box"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg" alt="Vue.js" /></div></a>
+            <a href="https://vitejs.dev/" target="_blank"><div class="icon-box"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vite/vite-original.svg" alt="Vite" /></div></a>
+            <a href="https://fastapi.tiangolo.com/" target="_blank"><div class="icon-box"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg" alt="FastAPI" /></div></a>
+            <a href="https://www.docker.com/" target="_blank"><div class="icon-box"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker" /></div></a>
+            <a href="https://nginx.org/" target="_blank"><div class="icon-box"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nginx/nginx-original.svg" alt="Nginx" /></div></a>
+            <a href="https://www.python.org/" target="_blank"><div class="icon-box"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" /></div></a>
+            <a href="https://www.gnu.org/software/bash/" target="_blank"><div class="icon-box"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg" alt="Bash" /></div></a>
+            <a href="https://github.com/features/actions" target="_blank"><div class="icon-box"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub Actions" /></div></a>
+        </div>
     </div>
 </template>
 
@@ -80,47 +73,6 @@ const formattedResponse = computed(() =>
     padding: 20px;
 }
 
-/* Logos distribuidos correctamente */
-.logos {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    width: 100%;
-    max-width: 700px;
-    margin-bottom: 15px;
-}
-
-.logos img {
-    width: clamp(50px, 9vw, 100px);
-    height: auto;
-    transition: transform 0.3s ease, filter 0.3s ease;
-}
-
-/* Orilla blanca antes del efecto neón */
-.neon-border {
-    border-radius: 10px;
-    background-color: white;
-    padding: 5px;
-    filter: drop-shadow(0px 0px 5px rgba(255, 255, 255, 0.8));
-    transition: all 0.3s ease-in-out;
-}
-
-/* Neon en logos */
-.neon-border:hover {
-    filter: drop-shadow(0px 0px 10px rgba(255, 0, 255, 0.8));
-}
-
-/* GitHub alineado correctamente */
-.github-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: clamp(60px, 10vw, 110px);
-    height: clamp(60px, 10vw, 110px);
-    padding: 8px;
-}
-
 /* Respuesta API con efecto cristalizado */
 .response {
     background: rgba(255, 255, 255, 0.1);
@@ -136,6 +88,49 @@ const formattedResponse = computed(() =>
     max-height: 200px;
     overflow-y: auto;
     border: 1px solid rgba(255, 255, 255, 0.2);
+    margin-bottom: 10px;
+}
+
+/* Contador de recargas */
+.reload-counter {
+    font-size: 1.2rem;
+    color: #ff9d00;
+    margin: 10px 0 15px;
+}
+
+/* Logos con glow y bordes suaves */
+.logos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+    max-width: 700px;
+    margin-top: 10px;
+}
+
+.icon-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 70px;
+    height: 70px;
+    border-radius: 15px;
+    background-color: white;
+    padding: 5px;
+    transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+    filter: drop-shadow(0px 0px 5px rgba(255, 255, 255, 0.6));
+}
+
+/* Neon Glow alrededor */
+.icon-box:hover {
+    filter: drop-shadow(0px 0px 10px rgba(255, 0, 255, 0.8)) drop-shadow(0px 0px 15px rgba(255, 165, 0, 0.8));
+    transform: scale(1.1);
+}
+
+.icon-box img {
+    width: 50px;
+    height: auto;
 }
 
 /* Ajustes responsivos */
@@ -149,12 +144,21 @@ const formattedResponse = computed(() =>
         gap: 4vw;
     }
 
-    h1 {
-        font-size: 1.6rem;
+    .icon-box {
+        width: 60px;
+        height: 60px;
     }
 
-    h2 {
-        font-size: 1.1rem;
+    .icon-box img {
+        width: 45px;
+    }
+
+    .response {
+        font-size: 0.85rem;
+    }
+
+    .reload-counter {
+        font-size: 1rem;
     }
 }
 </style>
