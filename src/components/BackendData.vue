@@ -63,7 +63,7 @@ const formattedResponse = computed(() =>
 </template>
 
 <style scoped>
-/* Contenedor principal */
+/* Contenedor principal (ahora más oscuro) */
 .container {
     display: flex;
     flex-direction: column;
@@ -71,10 +71,13 @@ const formattedResponse = computed(() =>
     justify-content: center;
     text-align: center;
     min-height: auto;
-    background-color: #1e1e1e;
+    background: rgba(20, 20, 20, 0.9); /* Más oscuro */
+    backdrop-filter: blur(5px);
     color: white;
     font-family: Arial, sans-serif;
     padding: 20px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 /* Respuesta API con efecto cristalizado */
