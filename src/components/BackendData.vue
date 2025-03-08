@@ -12,23 +12,22 @@ const backendData = ref<ApiResponse | null>(null);
 onMounted(async () => {
     try {
         const response = await axios.get<ApiResponse>("http://backend-tl-showroom.equalitech.xyz:8000/");
+        
+        console.log("✅ Respuesta completa del backend:", response);
+
         backendData.value = response.data;
     } catch (error: any) {
         console.error("❌ Error al conectar con el backend:", error);
 
-        // Manejo detallado de errores
         if (error.response) {
-            // El backend respondió con un código de estado distinto de 2xx
             console.error("⚠️ Respuesta del backend:", error.response.status, error.response.statusText);
             backendData.value = { 
                 error: `Error ${error.response.status}: ${error.response.statusText}`
             };
         } else if (error.request) {
-            // La solicitud fue hecha pero no hubo respuesta del backend
             console.error("🚫 El backend no respondió.");
             backendData.value = { error: "El backend no responde (Timeout o desconectado)." };
         } else {
-            // Ocurrió un error en la configuración de la solicitud
             console.error("⚙️ Error en la configuración de la solicitud:", error.message);
             backendData.value = { error: "Error en la solicitud al backend." };
         }
