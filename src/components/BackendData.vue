@@ -38,21 +38,23 @@ const formattedResponse = computed(() =>
 
 <template>
     <div class="container">
-        <!-- Título animado -->
+        <!-- Título único -->
         <h1 class="animated-title">🚀 Vue + Vite con HTTPS y FastAPI</h1>
 
         <!-- Logos -->
         <div class="logos">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg" alt="Vue.js" />
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vite/vite-original.svg" alt="Vite" />
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg" alt="FastAPI" />
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker" />
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nginx/nginx-original.svg" alt="Nginx" />
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" />
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg" alt="Bash" />
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ubuntu/ubuntu-original.svg" alt="Ubuntu" />
+            <img class="neon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg" alt="Vue.js" />
+            <img class="neon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vite/vite-original.svg" alt="Vite" />
+            <img class="neon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg" alt="FastAPI" />
+            <img class="neon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker" />
+            <img class="neon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nginx/nginx-original.svg" alt="Nginx" />
+            <img class="neon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" />
+            <img class="neon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg" alt="Bash" />
             <div class="github-icon">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub Actions" />
+                <img class="neon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub Actions" />
+            </div>
+            <div class="ubuntu-icon">
+                <img class="neon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ubuntu/ubuntu-original.svg" alt="Ubuntu" />
             </div>
         </div>
 
@@ -82,65 +84,71 @@ const formattedResponse = computed(() =>
     padding: 20px;
 }
 
-/* Título animado con bordes elegantes */
+/* Título animado */
 .animated-title {
     font-size: 2rem;
     padding: 10px 20px;
-    border: 2px solid transparent;
+    border: 3px solid transparent;
     border-image: linear-gradient(45deg, #ff9d00, #ff4e00, #e100ff) 1;
     animation: glow 2s infinite alternate;
 }
 
 @keyframes glow {
-    from {
-        text-shadow: 0 0 5px #ff9d00, 0 0 10px #ff4e00;
+    0% {
+        text-shadow: 0 0 10px #ff9d00, 0 0 20px #ff4e00;
     }
-    to {
-        text-shadow: 0 0 10px #e100ff, 0 0 20px #ff4e00;
+    50% {
+        text-shadow: 0 0 15px #e100ff, 0 0 30px #ff4e00;
+    }
+    100% {
+        text-shadow: 0 0 10px #ff9d00, 0 0 20px #ff4e00;
     }
 }
 
-/* Logos distribuidos con efectos */
+/* Logos distribuidos correctamente */
 .logos {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: clamp(10px, 2vw, 20px);
+    gap: 20px;
     width: 100%;
     max-width: 700px;
     margin-bottom: 15px;
 }
 
 .logos img {
-    width: clamp(40px, 8vw, 80px);
+    width: clamp(50px, 9vw, 100px);
     height: auto;
-    filter: brightness(1.2) drop-shadow(0px 0px 5px rgba(255, 255, 255, 0.5));
     transition: transform 0.3s ease, filter 0.3s ease;
 }
 
-.logos img:hover {
-    transform: scale(1.1);
-    filter: brightness(1.5) drop-shadow(0px 0px 10px rgba(255, 255, 255, 0.8));
+/* Neon animado en logos */
+.neon {
+    filter: drop-shadow(0px 0px 5px rgba(255, 0, 255, 0.6));
+    animation: neonGlow 1.5s infinite alternate ease-in-out;
 }
 
-.logos img:active {
-    transform: scale(0.9);
-    opacity: 0.8;
+@keyframes neonGlow {
+    0% {
+        filter: drop-shadow(0px 0px 5px rgba(255, 0, 255, 0.6));
+    }
+    50% {
+        filter: drop-shadow(0px 0px 10px rgba(0, 255, 255, 0.8));
+    }
+    100% {
+        filter: drop-shadow(0px 0px 5px rgba(255, 255, 0, 0.6));
+    }
 }
 
-/* Logo de GitHub con fondo blanco */
-.github-icon {
-    border-radius: 50%;
-    background-color: white;
-    padding: 5px;
-    width: clamp(40px, 8vw, 80px);
-    height: clamp(40px, 8vw, 80px);
+/* GitHub y Ubuntu más grandes */
+.github-icon, .ubuntu-icon {
+    width: clamp(60px, 10vw, 110px);
+    height: clamp(60px, 10vw, 110px);
 }
 
-.github-icon img {
-    width: 60%;
+.github-icon img, .ubuntu-icon img {
+    width: 100%;
     height: auto;
-    filter: brightness(0);
 }
 
 /* Contador de recargas */
