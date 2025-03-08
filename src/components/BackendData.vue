@@ -28,7 +28,7 @@ const fetchData = async () => {
 
 onMounted(() => {
     fetchData();
-    setInterval(fetchData, 10000); // Consulta reactiva cada 10s
+    setInterval(fetchData, 10000);
 });
 
 const formattedResponse = computed(() =>
@@ -38,7 +38,7 @@ const formattedResponse = computed(() =>
 
 <template>
     <div class="container">
-        <!-- Título único -->
+        <!-- Título único con neón en los bordes -->
         <h1 class="animated-title">🚀 Vue + Vite con HTTPS y FastAPI</h1>
 
         <!-- Logos -->
@@ -84,25 +84,19 @@ const formattedResponse = computed(() =>
     padding: 20px;
 }
 
-/* Título animado */
+/* Título animado con neón en los bordes */
 .animated-title {
     font-size: 2rem;
     padding: 10px 20px;
-    border: 3px solid transparent;
-    border-image: linear-gradient(45deg, #ff9d00, #ff4e00, #e100ff) 1;
-    animation: glow 2s infinite alternate;
+    color: white;
+    text-shadow: 0 0 5px #ff9d00, 0 0 10px #ff4e00, 0 0 15px #e100ff;
+    animation: neonText 1.5s infinite alternate ease-in-out;
 }
 
-@keyframes glow {
-    0% {
-        text-shadow: 0 0 10px #ff9d00, 0 0 20px #ff4e00;
-    }
-    50% {
-        text-shadow: 0 0 15px #e100ff, 0 0 30px #ff4e00;
-    }
-    100% {
-        text-shadow: 0 0 10px #ff9d00, 0 0 20px #ff4e00;
-    }
+@keyframes neonText {
+    0% { text-shadow: 0 0 5px #ff9d00, 0 0 10px #ff4e00, 0 0 15px #e100ff; }
+    50% { text-shadow: 0 0 10px #ff4e00, 0 0 20px #e100ff, 0 0 25px #ff9d00; }
+    100% { text-shadow: 0 0 5px #e100ff, 0 0 10px #ff9d00, 0 0 15px #ff4e00; }
 }
 
 /* Logos distribuidos correctamente */
@@ -122,22 +116,16 @@ const formattedResponse = computed(() =>
     transition: transform 0.3s ease, filter 0.3s ease;
 }
 
-/* Neon animado en logos */
+/* Neon en logos sin calipso brillante */
 .neon {
     filter: drop-shadow(0px 0px 5px rgba(255, 0, 255, 0.6));
     animation: neonGlow 1.5s infinite alternate ease-in-out;
 }
 
 @keyframes neonGlow {
-    0% {
-        filter: drop-shadow(0px 0px 5px rgba(255, 0, 255, 0.6));
-    }
-    50% {
-        filter: drop-shadow(0px 0px 10px rgba(0, 255, 255, 0.8));
-    }
-    100% {
-        filter: drop-shadow(0px 0px 5px rgba(255, 255, 0, 0.6));
-    }
+    0% { filter: drop-shadow(0px 0px 5px rgba(255, 0, 255, 0.6)); }
+    50% { filter: drop-shadow(0px 0px 10px rgba(255, 165, 0, 0.8)); }
+    100% { filter: drop-shadow(0px 0px 5px rgba(255, 255, 0, 0.6)); }
 }
 
 /* GitHub y Ubuntu más grandes */
