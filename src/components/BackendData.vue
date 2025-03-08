@@ -39,7 +39,7 @@ const formattedResponse = computed(() =>
 <template>
     <div class="container">
         <!-- Título único con glow -->
-        <h1 class="animated-title">🚀 Vue + Vite con HTTPS y FastAPI</h1>
+      
 
         <!-- Logos -->
         <div class="logos">
