@@ -69,17 +69,19 @@ const formattedResponse = computed(() =>
     padding: 20px;
 }
 
-/* Logos */
+/* Logos distribuidos uniformemente */
 .logos {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
+    justify-content: space-evenly; /* Espaciado uniforme */
+    gap: 15px;
+    width: 100%;
+    max-width: 500px; /* Limita el ancho máximo */
     margin-bottom: 15px;
 }
 
 .logos img {
-    width: 40px;
+    width: 50px;
     height: auto;
     filter: brightness(1.2);
 }
@@ -118,8 +120,13 @@ h2 {
         padding: 10px;
     }
 
+    .logos {
+        max-width: 80%; /* Se adapta mejor en móvil */
+        gap: 10px;
+    }
+
     .logos img {
-        width: 35px;
+        width: 40px;
     }
 
     h1 {
