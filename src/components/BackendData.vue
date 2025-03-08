@@ -31,7 +31,7 @@ const formattedResponse = computed(() =>
 
 <template>
     <div class="container">
-        <!-- Sección de Logos -->
+        <!-- Logos -->
         <div class="logos">
             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg" alt="Vue" />
             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vite/vite-original.svg" alt="Vite" />
@@ -42,23 +42,23 @@ const formattedResponse = computed(() =>
             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg" alt="Bash" />
         </div>
 
-        <!-- Título -->
+        <!-- Título principal -->
         <h1>🚀 Vue + Vite con HTTPS y FastAPI</h1>
 
         <!-- Respuesta de FastAPI -->
-        <h2>📡 FastAPI Response:</h2>
         <pre class="response">{{ formattedResponse }}</pre>
     </div>
 </template>
 
 <style scoped>
+/* Contenedor principal flexible */
 .container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
-    height: 100vh;
+    min-height: auto; /* Se ajusta al contenido */
     background-color: #1e1e1e;
     color: white;
     font-family: Arial, sans-serif;
@@ -70,37 +70,49 @@ const formattedResponse = computed(() =>
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 15px;
-    margin-bottom: 20px;
+    gap: 10px;
+    margin-bottom: 15px;
 }
 
 .logos img {
-    width: 50px;
+    width: 40px;
     height: auto;
     filter: brightness(1.2);
 }
 
-/* Estilos de Texto */
+/* Título */
 h1 {
-    font-size: 2rem;
-    margin-bottom: 10px;
-}
-
-h2 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
 }
 
 /* Respuesta API */
 .response {
     background: #2d2d2d;
-    padding: 15px;
+    padding: 10px;
     border-radius: 8px;
-    font-size: 1rem;
+    font-size: 0.9rem;
     white-space: pre-wrap;
     word-wrap: break-word;
     max-width: 90%;
     overflow-x: auto;
     text-align: left;
+    max-height: 200px; /* No se pasa de 200px en móvil */
+    overflow-y: auto;
+}
+
+/* Ajustes responsivos */
+@media (max-width: 600px) {
+    .container {
+        padding: 10px;
+    }
+
+    .logos img {
+        width: 35px;
+    }
+
+    .response {
+        font-size: 0.85rem;
+    }
 }
 </style>
