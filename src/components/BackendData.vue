@@ -46,7 +46,7 @@ const formattedResponse = computed(() =>
         </div>
 
         <!-- Título principal -->
-        <h1>🚀 Vue + Vite con HTTPS y FastAPI</h1>
+        <h1>🚀 Desplegado automáticamente con GitHub actions y bash shell</h1>
 
         <!-- Stack en juego -->
         <h2>🔥 EasyEngine + Nginx + Docker + Python + SSL + CI/CD con GitHub Actions + Bash</h2>
