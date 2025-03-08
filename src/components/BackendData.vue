@@ -63,7 +63,7 @@ const formattedResponse = computed(() =>
 </template>
 
 <style scoped>
-/* Contenedor principal (ahora más oscuro) */
+/* Contenedor principal */
 .container {
     display: flex;
     flex-direction: column;
@@ -113,12 +113,14 @@ const formattedResponse = computed(() =>
     width: 100%;
     max-width: 800px;
     margin-top: 10px;
+    justify-content: center; /* Centra la última fila si tiene menos de 5 */
 }
 
 /* Máximo 5 iconos por fila en PC */
 @media (min-width: 768px) {
     .logos {
         grid-template-columns: repeat(5, 1fr);
+        justify-content: center; /* Se asegura de centrar la última fila */
     }
 }
 
