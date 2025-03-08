@@ -38,7 +38,7 @@ const formattedResponse = computed(() =>
 
 <template>
     <div class="container">
-        <!-- Título único con neón en los bordes -->
+        <!-- Título único con glow -->
         <h1 class="animated-title">🚀 Vue + Vite con HTTPS y FastAPI</h1>
 
         <!-- Logos -->
@@ -84,7 +84,7 @@ const formattedResponse = computed(() =>
     padding: 20px;
 }
 
-/* Título animado con neón en los bordes */
+/* Título con glow */
 .animated-title {
     font-size: 2rem;
     padding: 10px 20px;
@@ -116,7 +116,7 @@ const formattedResponse = computed(() =>
     transition: transform 0.3s ease, filter 0.3s ease;
 }
 
-/* Neon en logos sin calipso brillante */
+/* Neon en logos */
 .neon {
     filter: drop-shadow(0px 0px 5px rgba(255, 0, 255, 0.6));
     animation: neonGlow 1.5s infinite alternate ease-in-out;
@@ -128,29 +128,24 @@ const formattedResponse = computed(() =>
     100% { filter: drop-shadow(0px 0px 5px rgba(255, 255, 0, 0.6)); }
 }
 
-/* GitHub y Ubuntu más grandes */
-.github-icon, .ubuntu-icon {
+/* Ubuntu cuadrado */
+.ubuntu-icon {
     width: clamp(60px, 10vw, 110px);
     height: clamp(60px, 10vw, 110px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background-color: #e95420;
+    padding: 8px;
 }
 
-.github-icon img, .ubuntu-icon img {
-    width: 100%;
-    height: auto;
-}
-
-/* Contador de recargas */
-.reload-counter {
-    font-size: 1.2rem;
-    color: #ff9d00;
-    margin: 10px 0;
-}
-
-/* Respuesta API */
+/* Respuesta API con efecto cristalizado */
 .response {
-    background: #2d2d2d;
-    padding: 10px;
-    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+    padding: 15px;
+    border-radius: 10px;
     font-size: 0.9rem;
     white-space: pre-wrap;
     word-wrap: break-word;
@@ -159,6 +154,7 @@ const formattedResponse = computed(() =>
     text-align: left;
     max-height: 200px;
     overflow-y: auto;
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 /* Ajustes responsivos */
