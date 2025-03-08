@@ -53,16 +53,13 @@ const formattedResponse = computed(() =>
             <div class="github-icon">
                 <img class="neon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub Actions" />
             </div>
-            <div class="ubuntu-icon">
-                <img class="neon" src="https://upload.wikimedia.org/wikipedia/commons/9/9e/UbuntuCoF.svg" alt="Ubuntu" />
-            </div>
         </div>
 
         <!-- Contador de recargas -->
         <p class="reload-counter">🔄 Backend recargado: {{ reloadCount }} veces</p>
 
         <!-- Stack en juego -->
-        <h2>🔥 EasyEngine + Nginx + Docker + Python + SSL + CI/CD con GitHub Actions + Bash + Ubuntu</h2>
+        <h2>🔥 EasyEngine + Nginx + Docker + Python + SSL + CI/CD con GitHub Actions + Bash</h2>
 
         <!-- Respuesta de FastAPI -->
         <pre class="response">{{ formattedResponse }}</pre>
@@ -128,13 +125,13 @@ const formattedResponse = computed(() =>
     100% { filter: drop-shadow(0px 0px 5px rgba(255, 255, 0, 0.6)); }
 }
 
-/* Ubuntu sin fondo */
-.ubuntu-icon {
-    width: clamp(60px, 10vw, 110px);
-    height: clamp(60px, 10vw, 110px);
+/* GitHub alineado correctamente */
+.github-icon {
     display: flex;
     align-items: center;
     justify-content: center;
+    width: clamp(60px, 10vw, 110px);
+    height: clamp(60px, 10vw, 110px);
     padding: 8px;
 }
 
