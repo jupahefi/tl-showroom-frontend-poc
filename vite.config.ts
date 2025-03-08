@@ -6,7 +6,15 @@ export default defineConfig({
     server: {
         host: true,
         port: 5173,
-        strictPort: true
+        strictPort: true,
+        proxy: {
+            "/api": {
+                target: "http://backend-tl-showroom.equalitech.xyz:8000",
+                changeOrigin: true,
+                secure: false,
+                rewrite: (path) => path.replace(/^\/api/, ""),
+            },
+        },
     },
     build: {
         outDir: "dist"
