@@ -40,8 +40,13 @@ const formattedResponse = computed(() =>
             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nginx/nginx-original.svg" alt="Nginx" />
             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" />
             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg" alt="Bash" />
-            <img id="github-logo" src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="GitHub Actions" />
+            <div class="github-icon">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub Actions" />
+            </div>
         </div>
+
+        <!-- Título principal -->
+        <h1>🚀 Vue + Vite con HTTPS y FastAPI</h1>
 
         <!-- Stack en juego -->
         <h2>🔥 EasyEngine + Nginx + Docker + Python + SSL + CI/CD con GitHub Actions + Bash</h2>
@@ -83,16 +88,22 @@ const formattedResponse = computed(() =>
     filter: brightness(1.2);
 }
 
-/* Logo de GitHub dinámico */
-#github-logo {
-    content: url("https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg"); /* Negro por defecto */
+/* Logo de GitHub con fondo blanco */
+.github-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: white;
+    padding: 5px;
 }
 
-/* Si el usuario tiene modo oscuro, cambia el logo a blanco */
-@media (prefers-color-scheme: dark) {
-    #github-logo {
-        content: url("https://upload.wikimedia.org/wikipedia/commons/4/4a/GitHub_Mark_White.svg");
-    }
+.github-icon img {
+    width: 40px;
+    height: auto;
+    filter: brightness(0); /* Asegura que se vea bien en cualquier fondo */
 }
 
 /* Títulos */
@@ -136,6 +147,15 @@ h2 {
 
     .logos img {
         width: 40px;
+    }
+
+    .github-icon {
+        width: 45px;
+        height: 45px;
+    }
+
+    .github-icon img {
+        width: 35px;
     }
 
     h1 {
