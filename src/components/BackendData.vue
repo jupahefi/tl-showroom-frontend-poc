@@ -54,7 +54,7 @@ const formattedResponse = computed(() =>
                 <img class="neon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub Actions" />
             </div>
             <div class="ubuntu-icon">
-                <img class="neon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ubuntu/ubuntu-original.svg" alt="Ubuntu" />
+                <img class="neon" src="https://upload.wikimedia.org/wikipedia/commons/9/9e/UbuntuCoF.svg" alt="Ubuntu" />
             </div>
         </div>
 
@@ -128,15 +128,13 @@ const formattedResponse = computed(() =>
     100% { filter: drop-shadow(0px 0px 5px rgba(255, 255, 0, 0.6)); }
 }
 
-/* Ubuntu cuadrado */
+/* Ubuntu sin fondo */
 .ubuntu-icon {
     width: clamp(60px, 10vw, 110px);
     height: clamp(60px, 10vw, 110px);
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 10px;
-    background-color: #e95420;
     padding: 8px;
 }
 
