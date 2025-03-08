@@ -11,7 +11,7 @@ const backendData = ref<ApiResponse | null>(null);
 
 onMounted(async () => {
     try {
-        const response = await axios.get<ApiResponse>("http://localhost:8000/");
+        const response = await axios.get<ApiResponse>("http://backend-tl-showroom.equalitech.xyz:8000/");
         backendData.value = response.data;
     } catch (error: any) {
         console.error("❌ Error al conectar con el backend:", error);
