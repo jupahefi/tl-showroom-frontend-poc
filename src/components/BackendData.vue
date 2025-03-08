@@ -40,10 +40,14 @@ const formattedResponse = computed(() =>
             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nginx/nginx-original.svg" alt="Nginx" />
             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" />
             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg" alt="Bash" />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub Actions" />
         </div>
 
         <!-- Título principal -->
         <h1>🚀 Vue + Vite con HTTPS y FastAPI</h1>
+
+        <!-- Stack en juego -->
+        <h2>🔥 EasyEngine + Nginx + Docker + Python + SSL + CI/CD con GitHub Actions + Bash</h2>
 
         <!-- Respuesta de FastAPI -->
         <pre class="response">{{ formattedResponse }}</pre>
@@ -80,9 +84,16 @@ const formattedResponse = computed(() =>
     filter: brightness(1.2);
 }
 
-/* Título */
+/* Títulos */
 h1 {
     font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 1.3rem;
+    font-weight: normal;
+    color: #cccccc;
     margin-bottom: 15px;
 }
 
@@ -109,6 +120,14 @@ h1 {
 
     .logos img {
         width: 35px;
+    }
+
+    h1 {
+        font-size: 1.6rem;
+    }
+
+    h2 {
+        font-size: 1.1rem;
     }
 
     .response {
