@@ -49,11 +49,17 @@ const formattedResponse = computed(() =>
             <a href="https://vuejs.org/" target="_blank"><div class="icon-box"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg" alt="Vue.js" /></div></a>
             <a href="https://vitejs.dev/" target="_blank"><div class="icon-box"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vite/vite-original.svg" alt="Vite" /></div></a>
             <a href="https://fastapi.tiangolo.com/" target="_blank"><div class="icon-box"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg" alt="FastAPI" /></div></a>
-            <a href="https://www.docker.com/" target="_blank"><div class="icon-box"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker" /></div></a>
-            <a href="https://nginx.org/" target="_blank"><div class="icon-box"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nginx/nginx-original.svg" alt="Nginx" /></div></a>
             <a href="https://www.python.org/" target="_blank"><div class="icon-box"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" /></div></a>
+            <a href="https://www.javascript.com/" target="_blank"><div class="icon-box"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" /></div></a>
+            <a href="https://www.postgresql.org/" target="_blank"><div class="icon-box"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL" /></div></a>
+            <a href="https://www.docker.com/" target="_blank"><div class="icon-box"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker" /></div></a>
+            <a href="https://docs.docker.com/compose/" target="_blank"><div class="icon-box"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker Compose" /></div></a>
+            <a href="https://nginx.org/" target="_blank"><div class="icon-box"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nginx/nginx-original.svg" alt="Nginx" /></div></a>
             <a href="https://www.gnu.org/software/bash/" target="_blank"><div class="icon-box"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg" alt="Bash" /></div></a>
             <a href="https://github.com/features/actions" target="_blank"><div class="icon-box"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub Actions" /></div></a>
+            <a href="https://cli.github.com/" target="_blank"><div class="icon-box"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub CLI" /></div></a>
+            <a href="https://www.vultr.com/" target="_blank"><div class="icon-box"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Vultr_logo.svg/512px-Vultr_logo.svg.png" alt="Vultr" /></div></a>
+            <a href="https://easyengine.io/" target="_blank"><div class="icon-box"><img src="https://avatars.githubusercontent.com/u/3853786?s=200&v=4" alt="EasyEngine" /></div></a>
         </div>
     </div>
 </template>
@@ -105,7 +111,7 @@ const formattedResponse = computed(() =>
     justify-content: center;
     gap: 20px;
     width: 100%;
-    max-width: 700px;
+    max-width: 800px;
     margin-top: 10px;
 }
 
