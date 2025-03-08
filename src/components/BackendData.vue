@@ -113,14 +113,15 @@ const formattedResponse = computed(() =>
     width: 100%;
     max-width: 800px;
     margin-top: 10px;
-    justify-content: center; /* Centra la última fila si tiene menos de 5 */
+    justify-content: center; /* Centra la última fila */
+    grid-auto-flow: row dense; /* Evita espacios vacíos */
 }
 
 /* Máximo 5 iconos por fila en PC */
 @media (min-width: 768px) {
     .logos {
         grid-template-columns: repeat(5, 1fr);
-        justify-content: center; /* Se asegura de centrar la última fila */
+        justify-content: center; /* Asegura que la última fila se centre */
     }
 }
 
