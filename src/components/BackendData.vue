@@ -11,7 +11,7 @@ const backendData = ref<ApiResponse | null>(null);
 
 onMounted(async () => {
     try {
-        const response = await axios.get<ApiResponse>("https://backend-tl-showroom.equalitech.xyz:8000/");
+        const response = await axios.get<ApiResponse>("https://tl-showroom.equalitech.xyz/api/");
         
         console.log("✅ Respuesta completa del backend:", response);
 
