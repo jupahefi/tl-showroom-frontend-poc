@@ -104,13 +104,19 @@ const formattedResponse = computed(() =>
 
 /* Logos con glow y bordes suaves */
 .logos {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
     gap: 20px;
     width: 100%;
     max-width: 800px;
     margin-top: 10px;
+}
+
+/* Máximo 5 iconos por fila en PC */
+@media (min-width: 768px) {
+    .logos {
+        grid-template-columns: repeat(5, 1fr);
+    }
 }
 
 .icon-box {
