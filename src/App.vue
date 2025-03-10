@@ -3,25 +3,29 @@ import BackendData from "./components/BackendData.vue";
 </script>
 
 <template>
-    <div class="container">
-        <h1 class="glow-title">
-            🚀 Vite+Vue y FastAPI con HTTPS
-        </h1>
-        <BackendData />
-    </div>
+     <div class="app-wrapper">
+         <!-- Título con glow y emoji WebP -->
+         <h1 class="glow-title">
+             <img src="https://em-content.zobj.net/source/telegram/386/rocket_1f680.webp" 
+                 alt="🚀" class="emoji" />
+             Vite+Vue y FastAPI con HTTPS
+         </h1>
+ 
+         <!-- Componente que maneja la conexión con el backend -->
+         <BackendData />
+     </div>
 </template>
 
 <style scoped>
-/* Contenedor principal */
-.container {
+/* Envoltorio principal */
+.app-wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: start; /* Evita que el título quede muy abajo */
     text-align: center;
     min-height: 100vh;
-    background-color: #1e1e1e;
-    padding: 20px;
+    padding-top: 20px; /* Ajusta la separación sin exceso */
 }
 
 /* Glow aplicado al título */
