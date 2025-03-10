@@ -11,7 +11,6 @@ import BackendData from "./components/BackendData.vue";
     </div>
 </template>
 
-
 <style scoped>
 /* Contenedor principal */
 .container {
