@@ -17,20 +17,6 @@ import BackendData from "./components/BackendData.vue";
 </template>
 
 <style scoped>
-/* Contenedor Principal */
-.container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    min-height: 100vh;
-    background-color: #1e1e1e;
-    color: white;
-    font-family: Arial, sans-serif;
-    padding: 20px;
-}
-
 /* Glow aplicado al título */
 .glow-title {
     font-size: clamp(2.5rem, 5vw, 4rem);
