@@ -3,17 +3,15 @@ import BackendData from "./components/BackendData.vue";
 </script>
 
 <template>
-    <div class="container">
-        <!-- Título con glow y emoji WebP -->
-        <h1 class="glow-title">
-            <img src="https://em-content.zobj.net/source/telegram/386/rocket_1f680.webp" 
-                alt="🚀" class="emoji" />
-            Vite+Vue y FastAPI con HTTPS
-        </h1>
+    <!-- Título con glow y emoji WebP -->
+    <h1 class="glow-title">
+        <img src="https://em-content.zobj.net/source/telegram/386/rocket_1f680.webp" 
+            alt="🚀" class="emoji" />
+        Vite+Vue y FastAPI con HTTPS
+    </h1>
 
-        <!-- Componente que maneja la conexión con el backend -->
-        <BackendData />
-    </div>
+    <!-- Componente que maneja la conexión con el backend -->
+    <BackendData />
 </template>
 
 <style scoped>
