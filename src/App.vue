@@ -3,7 +3,7 @@ import BackendData from "./components/BackendData.vue";
 </script>
 
 <template>
-    <h1 class="glow-title">🚀 Vue + Vite con HTTPS y FastAPI</h1>
+    <h1 class="glow-title">🚀 Vite+Vue y FastAPI con HTTPS</h1>
     <BackendData />
 </template>
 
