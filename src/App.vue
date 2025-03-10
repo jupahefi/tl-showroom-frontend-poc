@@ -22,10 +22,10 @@ import BackendData from "./components/BackendData.vue";
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: start;
+    justify-content: flex-start; /* Asegura que el contenido empiece arriba */
     text-align: center;
     min-height: 100vh;
-    padding-top: 20px;
+    padding-top: 0; /* 🔥 Eliminamos el padding extra */
 }
 
 /* Glow aplicado al título */
@@ -35,8 +35,7 @@ import BackendData from "./components/BackendData.vue";
     text-shadow: 0 0 8px #ff9d00, 0 0 15px #ff4e00, 0 0 20px #e100ff;
     animation: neonGlow 1.5s infinite alternate ease-in-out;
     font-weight: bold;
-    padding: 10px 0;
-    
+    padding: 5px 0; /* 🔥 Reducimos el padding vertical */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -45,7 +44,7 @@ import BackendData from "./components/BackendData.vue";
 
 /* Imagen del emoji WebP */
 .emoji {
-    width: clamp(40px, 4vw, 50px); /* 🔥 Ajuste responsivo */
+    width: clamp(40px, 4vw, 50px);
     height: auto;
     display: inline-block;
 }
@@ -63,7 +62,7 @@ import BackendData from "./components/BackendData.vue";
         font-size: clamp(2rem, 6vw, 3rem);
     }
     .emoji {
-        width: clamp(30px, 5vw, 40px); /* 🔥 Emoji más pequeño en móviles */
+        width: clamp(30px, 5vw, 40px);
     }
 }
 </style>
