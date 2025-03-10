@@ -24,8 +24,8 @@ import BackendData from "./components/BackendData.vue";
     align-items: center;
     justify-content: start; /* Evita que el título quede muy abajo */
     text-align: center;
-    min-height: 100vh;
-    padding-top: 20px; /* Ajusta la separación sin exceso */
+    min-height: 1vh;
+    padding-top: 1px; /* Ajusta la separación sin exceso */
 }
 
 /* Glow aplicado al título */
