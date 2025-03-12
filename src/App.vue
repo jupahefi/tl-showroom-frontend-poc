@@ -6,7 +6,7 @@ import BackendData from "./components/BackendData.vue";
     <div class="app-wrapper">
         <!-- Título con glow y emoji WebP -->
         <h1 class="glow-title">
-            <img src="https://em-content.zobj.net/source/telegram/386/rocket_1f680.webp" 
+            <img src="https://fonts.gstatic.com/s/e/notoemoji/15.1/1f680/512.webp" 
                 alt="🚀" class="emoji" />
             Vite+Vue y FastAPI con HTTPS
         </h1>
